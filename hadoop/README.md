@@ -18,7 +18,7 @@ https://dlcdn.apache.org/hadoop/common/hadoop-3.4.0/hadoop-3.4.0.tar.gz
 Install Java
 
 ```
-sudo add-apt-repository ppa:webupd8team/java
+sudo add-apt-repository ppa:openjdk-r/ppa
 sudo apt-get update
 sudo apt-get install openjdk-8-jdk
 ```
