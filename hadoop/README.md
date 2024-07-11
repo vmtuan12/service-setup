@@ -131,5 +131,9 @@ source /etc/environment
 ### Run
 
 ```
+hdfs namenode -format
+```
+
+```
 start-all.sh
 ```
