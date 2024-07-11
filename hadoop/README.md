@@ -15,6 +15,15 @@ https://dlcdn.apache.org/hadoop/common/hadoop-3.4.0/hadoop-3.4.0.tar.gz
 
 ### On both machines
 
+Setup SSH key
+
+```
+sudo apt-get install openssh-server openssh-client
+ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa
+cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+chmod 0600 ~/.ssh/authorized_keys
+```
+
 Install Java
 
 ```
