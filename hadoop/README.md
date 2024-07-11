@@ -63,7 +63,7 @@ In `/home/vagrant/hadoop/etc/hadoop/core-site.xml`
 </configuration>
 ```
 
-In `/home/hd/hadoop/etc/hadoop/hdfs-site.xml`
+In `/home/vagrant/hadoop/etc/hadoop/hdfs-site.xml`
 ```
 <configuration>
 <property>
@@ -77,7 +77,7 @@ In `/home/hd/hadoop/etc/hadoop/hdfs-site.xml`
 </configuration>
 ```
 
-In `/home/hd/hadoop/etc/hadoop/yarn-site.xml`
+In `/home/vagrant/hadoop/etc/hadoop/yarn-site.xml`
 ```
 <configuration>
 <property>
@@ -95,8 +95,8 @@ In `/home/hd/hadoop/etc/hadoop/yarn-site.xml`
 </configuration>
 ```
 
-In `/home/hd/hadoop/etc/hadoop/workers`, add all the worker nodes' IP, each on a new line.\
-In `/home/hd/hadoop/etc/hadoop/masters`, add the master node's IP.
+In `/home/vagrant/hadoop/etc/hadoop/workers`, add all the worker nodes' IP, each on a new line.\
+In `/home/vagrant/hadoop/etc/hadoop/masters`, add the master node's IP.
 
 Create folders
 ```
