@@ -22,6 +22,14 @@ sudo apt-get install openssh-server openssh-client
 ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa
 cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 chmod 0600 ~/.ssh/authorized_keys
+
+ssh-copy-id user_name@server_ip
+```
+
+Edit `/etc/hosts`, add the below information, each host on a new line
+
+```
+<ip> <hostname>
 ```
 
 Install Java
@@ -100,6 +108,33 @@ In `/home/vagrant/hadoop/etc/hadoop/yarn-site.xml`
 <property>
 <name>yarn.resourcemanager.hostname</name>
 <value><master-node-hostname-or-ip></value>
+</property>
+</configuration>
+```
+
+In `/home/vagrant/hadoop/etc/hadoop/mapred-site.xml` (Map-reduce configuration)
+
+```
+<configuration>
+<property>
+<name>mapreduce.framework.name</name>
+<value>yarn</value>
+</property>
+<property>
+<name>yarn.app.mapreduce.am.env</name>
+<value>HADOOP_MAPRED_HOME=/home/vagrant/hadoop</value>
+</property>
+<property>
+<name>mapreduce.map.env</name>
+<value>HADOOP_MAPRED_HOME=/home/vagrant/hadoop</value>
+</property>
+<property>
+<name>mapreduce.reduce.env</name>
+<value>HADOOP_MAPRED_HOME=/home/vagrant/hadoop</value>
+</property>
+<property>
+<name>mapreduce.application.classpath</name>
+<value>$HADOOP_MAPRED_HOME/share/hadoop/mapreduce/*,$HADOOP_MAPRED_HOME/share/hadoop/mapreduce/lib/*,$HADOOP_MAPRED_HOME/share/hadoop/common/*,$HADOOP_MAPRED_HOME/share/hadoop/common/lib/*,$HADOOP_MAPRED_HOME/share/hadoop/yarn/*,$HADOOP_MAPRED_HOME/share/hadoop/yarn/lib/*,$HADOOP_MAPRED_HOME/share/hadoop/hdfs/*,$HADOOP_MAPRED_HOME/share/hadoop/hdfs/lib/*</value>
 </property>
 </configuration>
 ```
