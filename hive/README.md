@@ -58,3 +58,7 @@ Start hive
 ```
 hive
 ```
+
+> [!NOTE]  
+> If encountering the error `FAILED: HiveException java.lang.RuntimeException: Unable to instantiate org.apache.hadoop.hive.ql.metadata.SessionHiveMetaStoreClient`\
+> Change dir to `$HIVE_HOME`, run `rm metastore_db/*.lck`
