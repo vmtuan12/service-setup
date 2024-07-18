@@ -3,8 +3,8 @@
 Done
 1. Hadoop
 2. Hive
+3. Spark
 
 In progress
-1. Spark
-2. Airflow
-3. Postgresql
+1. Airflow
+2. Postgresql
