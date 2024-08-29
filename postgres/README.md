@@ -1,6 +1,6 @@
 # Postgresql HA installation
 
-2 Nodes: 1 Master node (192.168.56.65), 1 Slave node (192.168.56.66)\
+2 Nodes: 1 Master node (192.168.56.65), 2 Slave nodes (192.168.56.66, 192.168.56.67)\
 OS: Ubuntu 20.04.6\
 Postgresql version: 12
 
@@ -105,7 +105,8 @@ On Master node, use the query `select * from pg_replication_slots;` to check whe
 ```
 slot_name | plugin | slot_type | datoid | database | temporary | active | active_pid | xmin | catalog_xmin | restart_lsn | confirmed_flush_lsn 
 ----------+--------+-----------+--------+----------+-----------+--------+------------+------+--------------+-------------+---------------------
-slave_1   |        | physical  |        |          | f         | t      |      22052 |      |              | 0/9013368   | 
-(1 row)
+slave_1   |        | physical  |        |          | f         | t      |      23173 |      |              | 0/B000060   | 
+slave_2   |        | physical  |        |          | f         | t      |      23270 |      |              | 0/B000060   | 
+(2 rows)
 ```
 If the value of the `active` column is `t`, then the slave is ok.
