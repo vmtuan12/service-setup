@@ -1,7 +1,7 @@
 # Postgresql HA installation
 
 2 Nodes: 1 Master node (192.168.56.65), 1 Slave node (192.168.56.66)\
-OS: Ubuntu\
+OS: Ubuntu 20.04.6\
 Postgresql version: 12
 
 ## On every nodes
