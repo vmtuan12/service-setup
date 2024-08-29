@@ -10,7 +10,7 @@ sudo apt-get update
 sudo apt install postgresql
 ```
 
-In `/etc/postgresql/<version>/main/pg_ident.conf`, add the following line
+In `/etc/postgresql/<version>/main/postgresql.conf`, add the following line
 ```
 listen_addresses = '*'
 ```
