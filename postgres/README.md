@@ -38,6 +38,13 @@ Exit psql, then restart postgresql service
 sudo systemctl restart postgresql@12-main.service
 ```
 
+Be sure that port 5432 has been opened
+```
+sudo iptables -A INPUT -p tcp --dport 5432 -j ACCEPT
+sudo iptables-save > ~/iptables
+sudo iptables-restore < ~/iptables
+```
+
 ## On Master node
 
 ```
