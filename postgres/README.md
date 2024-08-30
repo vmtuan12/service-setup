@@ -110,3 +110,21 @@ slave_2   |        | physical  |        |          | f         | t      |      2
 (2 rows)
 ```
 If the value of the `active` column is `t`, then the slave is ok.
+
+# Failover mechanism
+
+Add a node (192.168.56.68), called HA node, OS: Ubuntu 20.04.6 to handle the failover process of the Postgresql cluster
+
+## HA node setup
+
+```
+ssh-keygen -t rsa
+ssh-copy-id vagrant@192.168.56.65
+ssh-copy-id vagrant@192.168.56.66
+ssh-copy-id vagrant@192.168.56.67
+```
+
+## Code explain
+Except `check_connections.sh`, copy all other bash files to all nodes in the cluster, then give them executing permission by `chmod +x <file_path>`. `check_connections.sh` will stay in HA node.
+
+Whenever the master node fails, the `check_connections.sh` will detect and find a slave node to elect as the Master. It calls `slave_to_master.sh` in the new Master node, then run it, subsequently calls `slave_new_master.sh` to make other slaves connect to the new master.
